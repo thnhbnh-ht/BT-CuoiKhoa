@@ -17,6 +17,23 @@ body{
     box-shadow: 0 5px 10px rgba(82, 80, 80, 0.341); 
     background-color: white;
 }
+.navbar-toggle span{
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    margin: 3px 0;
+}
+.navbar-toggle{
+    line-height: 1;
+    font-size: 24px;
+    border: none;             
+    outline: none;           
+    background: transparent;        
+    padding: 0;
+    display: none;
+}
 img{
     width: 160px;
     height: 50px;
@@ -24,10 +41,30 @@ img{
 .item, .itemS{
     color: #1e2562;
     font-weight: 700;
-    padding: 20px 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .itemS{
     position: relative;
+}
+.itemS::after {
+    content: "";
+    position: absolute;
+    bottom: 0;    
+    left: 50%;        
+    transform: translateX(-50%); 
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 7px solid #3cb95f;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;   
+}
+.itemS:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 .menuS{
     display: flex;
@@ -128,9 +165,8 @@ img{
 }
 .banner-content {
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 110px;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -209,9 +245,6 @@ img{
     color: black;
     font-size: 15px;
 }
-.highlight, .sol{
-    margin: 0 110px;
-}
 .cnt h2{
     font-size: 40px;
     font-weight: 700;
@@ -225,7 +258,6 @@ img{
 .box{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 .box1{
     display: flex;
@@ -269,6 +301,7 @@ img{
 .why{
     width: 100%;
     background-color: #d1d4d6;
+    margin-top: 50px;
 }
 .content{
     padding: 60px 110px;
@@ -301,6 +334,7 @@ img{
     font-weight: 700;
     color: #1e2562;
     margin-top: 100px;
+    text-align: right;
 }
 .box-row{
     display: flex;
@@ -332,10 +366,28 @@ img{
     color: #1e2562;
     text-decoration: none;
 }
-.connect, .overview{
+.connect{
     width: 100%;
     position: relative;
     overflow: hidden;
+}
+.overview {
+    width: 100%;
+    height: 950px;
+    position: relative;
+    overflow: hidden;
+    background-image: 
+        linear-gradient(rgba(11, 34, 52, 0.4), rgba(39, 39, 16, 0.3)), 
+        url('./bg_overview_full.webp');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 100px 110px; 
+    box-sizing: border-box;
+    background-color: #d1d4d6;
 }
 .connect img{
     width: 120%;
@@ -360,9 +412,9 @@ img{
 .sol .btn, .sol h2, .project .btn, .project h2{
     margin: 50px 0;
 }
-.sol, .project{
+.highlight, .sol, .project{
     position: relative;
-    margin: 0 110px;
+    margin: 60px 110px;
 }
 .sol .box1:hover svg{
     transform: translateX(0px);
@@ -370,11 +422,9 @@ img{
 .slider-box, .slider-box1{
     width: 100%;
 }
-.slider-box .box1, .slider-box1 .box1{
+.slider-box .box1, .slider-box1 .box1, .box .box1{
     padding: 0 15px;
     overflow: hidden;
-    /* display: flex; */
-    /* flex-direction: column; */
 }
 .slider-box .box1 img, .slider-box1 .box1 img{
     width: 100%;
@@ -417,22 +467,6 @@ img{
 .next-arrow {
     right: 25px;
 }
-.overview{
-    position: relative;
-    width: 100%;
-    padding-bottom: 200px;
-    background-color: #d1d4d6;
-}
-.overview::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(24, 24, 24, 0.4);
-    z-index: 2;
-}
 .overview .bg{
     width: 100%;
     height: 100%;
@@ -445,18 +479,17 @@ img{
     position: absolute;
     top: 100px;
     left: 110px;
-    z-index: 3;
 }
 .overview-text h2{
     color: white;
     padding-bottom: 30px;
     font-size: 40px;
     font-weight: 700;
+    margin: 0;
 }
 .logo{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     position: absolute;
     top: 300px;
     left: 450px;
@@ -464,7 +497,6 @@ img{
 .logo img{
     width: 250px;
     height: 250px;
-    z-index: 3;
 }
 .project img{
     width: 250px;
@@ -486,7 +518,6 @@ img{
     color: #1e2562;
     margin-bottom: 30px;
 }
-
 .box2{
     display: flex;
     flex-direction: row;
@@ -513,6 +544,8 @@ img{
     align-items: center;
     height: auto;
     padding: 50px 20px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .box3 .product-item{
     display: flex;
@@ -605,4 +638,37 @@ img{
     width: 28px;
     height: 28px;
     border-radius: 4px;
+}
+@media(max-width: 1200px){
+    .navbar img{
+        display: none;
+    }
+    .box1 img{
+        width: 290px;
+        height: 280px;
+    }
+    .overview{
+        height: 1050px; 
+    }
+    .logo{
+        top: 300px;
+        left: 300px;
+    }
+} 
+@media(max-width: 992px){
+    .navbar img{
+        display: block;
+    }
+    .item, .itemS, .search, .cart{
+        display: none;
+    }
+    .navbar-toggle{
+        display: block;
+    }
+    .banner-content h2{
+        text-align: left;
+    }
+}
+@media(max-width: 756px){
+
 }
