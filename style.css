@@ -155,14 +155,12 @@ img{
 }
 
 .banner-img img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover; 
     display: block;
 }
-/* .banner-img img:last-child {
-    display: none;
-} */
 .banner-content {
     position: absolute;
     top: 15%;
@@ -264,12 +262,16 @@ img{
     flex-direction: column;
     overflow: hidden;
 }
+.box .box1 img{
+    width: 400px;
+    height: 390px;
+}
 .box1:hover a{
     color: #298643;
 }
 .slider-box .box1 img{
-    width: 400px;
-    height: 400px;
+    /* width: 400px;
+    height: 400px; */
     transition: transform 0.5s ease;
     object-fit: cover;
 }
@@ -538,7 +540,6 @@ img{
 .box3{
     background-color: #1c2259;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: auto;
@@ -573,7 +574,7 @@ img{
     flex: 1;
     width: 100%;
     height: 180px; 
-    object-fit: contain; 
+    object-fit: cover; 
 }
 #img1{
     display: block;
@@ -642,14 +643,14 @@ img{
     .navbar img{
         display: none;
     }
-    .box .box1 img, .slider-box .box1 img{
+    .box .box1 img{
         width: 290px;
         height: 280px;
     }
-    .slider-box1 .box1 img{
+    /* .slider-box1 .box1 img{
         width: 200px;
         height: 120px;
-    }
+    } */
     .overview{
         height: 1050px; 
     }
@@ -709,8 +710,9 @@ img{
         width: 200%;
         transform: translateX(-900px);
     }
-    .box .box1 img, .slider-box .box1{
-        width: 300px !important; 
+    .box .box1 img{
+        width: 295px !important; 
+        height: 283px !important;
     }
     .overview{
         height: 700px; 
@@ -720,15 +722,16 @@ img{
         left: 280px;
         margin-bottom: 50px;
     }
-    .slider-box1 .box1{
-        width: 240px !important;
-    }
+    /* .slider-box1 .box1 img{
+        width: 295px !important;
+        height: 171px !important;
+    } */
     .right-sub{
         margin-left: 150px;
     }
-    .row1{
+    /* .row1{
         width: 300px;
-    }
+    } */
     .cnt h2{
         font-size: 38px;
     }
@@ -737,18 +740,123 @@ img{
     }
     .trm-left p, .box-row1 p{
         font-size: 18px;
+    } 
+    .box3 .product-item img{
+        width: 250px;
     }
-    
+    .box3 .product-item{
+        padding: 0;
+    }
 }
 @media(max-width: 768px){
     .banner-img img {
         transform: scale(1.9) translateX(200px);
     }
-    .box .box1 img, .slider-box .box1{
+    .box .box1 img{
         width: 210px !important;
-        height: 200px; 
+        height: 200px !important; 
     }
-    .slider-box1 .box1{
+    /* .slider-box .box1 img{
+        width: 215px !important;
+        height: 205px !important; 
+    } */
+    /* .slider-box1 .box1 img{
+        width: 215px !important;
+        height: 125px !important; 
+    } */
+    .trademark, .box-row{
+        flex-direction: column;
+    }
+    .box-row1 img{
+        width: 710px;
+        height: 520px;
+    }
+    .connect img{
+        width: 250%;
+        transform: translateX(-1000px);
+    }
+    /* .row1{
+        width: 220px;
+    } */
+    .project a{
+        font-size: 18px;
+    }
+    .box2{
+        flex-direction: column;
+    }
+    #prd-it-4{
+        display: none;
+    }
+    .box3 .product-item img{
+        width: 180px;
+    }
+    .logo{
+        top: 350px;
+        left: 160px;
+        margin-bottom: 50px;
+    }
+    .box3 .product-item{
+        padding: 20px;
+    }
+}
+@media(max-width: 576px){
+    .banner-content {
+        position: absolute;
+        top: 0;
+        left: 10px;
+    }
+    .banner-img img{
+        transform: translateX(0);
+    }
+    .box{
+        display: flex;
+        flex-direction: column; 
+    }
+    .box .box1 img{
+        width: 510px !important;
+        height: 490px !important; 
+    }
+    /* .box .box1 .row1{
+        width: 510px;
+    } */
+    .trademark{
+        width: 100%;
+    }
+    .text-right{
+        text-align: center;
+    }
+    .trm-right img{
+        width: 276px;
+        height: 287px;
+    }
+    .connect img{
+        transform: translateX(-800px);
+    }
+    /* .slider-box .box1 .row1{
+        width: 220px;
+    } */
+    .slider-box .box1 img{
         width: 240px !important;
+        height: 230px !important; 
+    }
+    /* .slider-box .box1{
+        width: 250px;
+        height: 310px;
+    } */
+    .logo{
+        flex-direction: column;
+    }
+    .inf, .sub{
+        display: flex;
+        flex-direction: column;
+    }
+    .right-sub{
+        margin-left: 0;
+    }
+    .row-sub{
+        margin-left: 0;
+    }
+    #prd-it-3{
+        display: none;
     }
 }
