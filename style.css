@@ -302,7 +302,7 @@ img{
 }
 .why{
     width: 100%;
-    background-color: #d1d4d6;
+    background-color: #001C4E0D;
     margin-top: 50px;
 }
 .content{
@@ -389,7 +389,7 @@ img{
     justify-content: space-between; 
     padding: 100px 110px; 
     box-sizing: border-box;
-    background-color: #d1d4d6;
+    background-color: rgba(0, 0, 0, 0.279);
 }
 .connect img{
     width: 120%;
@@ -603,7 +603,7 @@ img{
     display: flex;
     flex-direction: row;
 }
-.tel{
+.tt{
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -639,6 +639,14 @@ img{
     height: 28px;
     border-radius: 4px;
 }
+.inf1{
+    display: flex;
+    flex-direction: row;
+}
+.inf2{
+    display: flex;
+    flex-direction: row;
+}
 @media(max-width: 1200px){
     .navbar img{
         display: none;
@@ -660,6 +668,9 @@ img{
     }
     .right-sub{
         margin-left: 180px;
+    }
+    .inf1{
+        flex-direction: column;
     }
 } 
 @media(max-width: 992px){
