@@ -1082,9 +1082,6 @@ img{
     }
 }
 @media(max-width: 768px){
-    .banner{
-        margin-top: 30px;
-    }
     .banner-img img {
         transform: scale(1.9) translateX(200px);
     }
@@ -1149,9 +1146,6 @@ img{
     }
 }
 @media(max-width: 576px){
-    .banner{
-        margin-top: 10px;
-    }
     .banner-content {
         position: absolute;
         top: 40px;
