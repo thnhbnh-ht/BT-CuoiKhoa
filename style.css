@@ -121,7 +121,7 @@ img{
 .item, .itemS{
     color: #012857;
     font-size: 15px;
-    font-weight: 550;
+    font-weight: 700;
     height: 100%;
     display: flex;
     align-items: center;
@@ -197,12 +197,12 @@ img{
 }
 .item1, .item2{
     color: #212529; 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     padding: 5px 0;
 }
-.cart, .search{
+.cart svg, .search svg{
     width: 20px;
     height: 20px;
     fill: #012857; 
@@ -917,7 +917,7 @@ img{
         font-size: 18px;
         color: #666666;
         transition: transform .3s ease-out;
-        z-index: 5;
+        z-index: 10;
     }
     .menu-sidebar .item.is-open::after, .menu-sidebar .itemS.is-open::after{
         transform: rotate(90deg);
@@ -954,12 +954,15 @@ img{
         height: 40px;
         padding-left: 35px ;
         align-items: center;
-        color: #444;
-        font-size: 13px;
-        font-weight: 600;
+        color: inherit;
+        font-size: 14px;
         box-sizing: border-box;
+        font-weight: 500;
     }
-    .menu-sidebar .col::after{
+    .menu-sidebar .item1{
+        text-transform: uppercase;
+    }
+    .menu-sidebar .col::after, .menu-sidebar .menuS::after{
         content: "\f105";
         font-family: "Font Awesome 5 Pro", "Font Awesome 6 Free", sans-serif;
         display: flex;
@@ -980,21 +983,30 @@ img{
     .menu-sidebar .col .item2{
         display: none;
         padding: 10px 0 10px 50px;
-        color: #666;
+        color: inherit;
         background-color: #f9f9f9;
         font-size: 13px;
+        font-weight: 500;
     }
     .menu-sidebar .col.sub-open .item2{ 
         display: block; 
     }
     .menu-sidebar .cart{
-        display: block;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         width: 16px;
         height: 14px;
-        margin: 15px 20px;
+        padding: 15px 20px;
         opacity: 1;
         visibility: visible;
         flex-shrink: 0;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 15px;
+    }
+    .cart svg{
+        fill: inherit;
     }
     .navbar img, .navbar-toggle{
         display: block;
@@ -1008,6 +1020,7 @@ img{
     }
     .item, .itemS{
         text-transform: none;
+        color: inherit;
     }
     .banner-content h2{
         text-align: left;
