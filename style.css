@@ -113,7 +113,6 @@ body{
     height: 16px;
     fill: #888;
 }
-
 img{
     width: 160px;
     height: 50px;
@@ -147,7 +146,6 @@ img{
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 1000;   
 }
-
 .menuS{
     display: flex;
     flex-direction: column;
@@ -207,7 +205,53 @@ img{
     height: 20px;
     fill: #012857; 
 }
-
+.sub-item-wrapper{
+    position: relative;
+}
+.sub-item-wrapper .item2{
+    display: block;
+}
+.sub-item-wrapper .menu-sub{
+    display: flex;
+    flex-direction: column;
+    display: block;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    position: absolute;
+    top: 5px;
+    left: 80%;
+    width: max-content;
+    padding: 10px 15px;
+    display: none;
+    background-color: #ffffff;
+    width: 240px;
+    z-index: 100;
+}
+.sub-item-wrapper.last .menu-sub{
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-top: 5px;
+}
+.item2:hover + .menu-sub, .menu-sub:hover{
+    display: block;
+}
+.menu-item{
+    list-style: none;
+}
+.menu-link{
+    display: block;
+    text-decoration: none;
+    font: 14px;
+    color: #000;
+    font-weight: 100;
+    text-transform: none;
+    padding: 6px 0;
+    transition: transform 0.3s ease;
+}
+.menu-link:hover{
+    color: #209B24;
+    transform: translateX(5px);
+}
 .banner-content{
     display: flex;
     flex-direction: column;
@@ -1021,6 +1065,9 @@ img{
     .item, .itemS{
         text-transform: none;
         color: inherit;
+    }
+    .menu-sub{
+        opacity: 0;
     }
     .banner-content h2{
         text-align: left;
