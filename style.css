@@ -724,6 +724,7 @@ img{
 .right-sub{
     flex-direction: column;
     margin-left: 470px;
+    width: 150px;
 }
 .row-sub{
     flex-direction: row;
@@ -738,6 +739,7 @@ img{
     width: 28px;
     height: 28px;
     border-radius: 4px;
+    margin-right: 10px;
 }
 .inf1{
     display: flex;
