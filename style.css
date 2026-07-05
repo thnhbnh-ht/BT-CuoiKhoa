@@ -665,6 +665,7 @@ img{
 }
 .box3 .product-item img{
     height: 180px;
+    width: auto;
     flex: 1;
     object-fit: contain;
 }
@@ -765,7 +766,7 @@ img{
 .box3-1{
     display: flex;
     justify-content: center;
-    width: 850px;
+    width: 1160px;
     overflow: hidden;
 }
 @media(min-width: 993px){
@@ -822,6 +823,9 @@ img{
     }
     .row1 a{
         font-size: 24px;
+    }
+    .box3-1{
+        width: 930px;
     }
 } 
 @media(max-width: 992px){
@@ -1142,6 +1146,9 @@ img{
     .info p, .info b{
         margin-bottom: 7px;
     }
+    .box3-1{
+        width: 850px;
+    }
 }
 @media(max-width: 768px){
     .banner-img img {
@@ -1206,6 +1213,9 @@ img{
     .right-sub{
         margin-left: 20px;
     }
+    .box3-1{
+        width: 690px;
+    }
 }
 @media(max-width: 576px){
     .banner-content {
@@ -1260,5 +1270,8 @@ img{
     }
     .right-sub{
         margin-left: 0;
+    }
+    .box3-1{
+        width: 430px;
     }
 }
