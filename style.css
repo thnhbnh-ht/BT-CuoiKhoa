@@ -260,7 +260,7 @@ img{
     position: relative;
     width: 100%;
     margin-top: 62px; 
-    height: 62px;
+    height: calc(100vh - 62px);
     overflow: hidden;
 }
 
@@ -365,6 +365,7 @@ img{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 .box .box1 img{
     width: 400px;
@@ -394,6 +395,9 @@ img{
     color: #001C4E;
     font-size: 24px;
     font-weight: 600;
+}
+.sol .slider-box .box1 .row1 a{
+    text-decoration: none;
 }
 .row1 svg{
     transition: transform 0.5s ease;
@@ -530,7 +534,7 @@ img{
 }
 .slider-box .box1, .slider-box1 .box1, .box .box1{
     padding: 0 15px;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 .slider-box .box1 img, .slider-box1 .box1 img{
     width: 100%;
@@ -793,9 +797,11 @@ img{
     .navbar img{
         display: none;
     }
-    .box .box1 img{
-        width: 290px;
-        height: 280px;
+    .box .box1 img {
+        width: 100%;
+        max-width: 290px;
+        height: auto;
+        aspect-ratio: 290 / 280;
     }
     .overview{
         height: 1050px; 
@@ -1165,8 +1171,10 @@ img{
         flex-direction: column;
     }
     .box-row1 img{
-        width: 710px;
-        height: 520px;
+        width: 100%;
+        max-width: 710px;
+        height: auto; 
+        aspect-ratio: 710 / 520;
     }
     .connect img{
         width: 250%;
@@ -1227,8 +1235,10 @@ img{
         transform: translateX(0);
     }
     .box .box1 img{
-        width: 510px !important;
-        height: 490px !important; 
+        width: 100% !important;
+        max-width: 510px !important; 
+        height: auto !important; 
+        aspect-ratio: 510 / 490;
     }
     .box{
         display: flex;
@@ -1241,8 +1251,9 @@ img{
         text-align: center;
     }
     .trm-right img{
-        width: 276px;
-        height: 287px;
+        width: 100%;
+        max-width: 276px;
+        height: auto;
     }
     .connect img{
         width: 300%;
@@ -1255,7 +1266,6 @@ img{
         display: flex;
         flex-direction: column;
     }
-    
     .row-sub{
         margin-left: 0;
     }
@@ -1272,6 +1282,7 @@ img{
         margin-left: 0;
     }
     .box3-1{
-        width: 430px;
+        width: 100%;
+        max-width: 430px;
     }
 }
