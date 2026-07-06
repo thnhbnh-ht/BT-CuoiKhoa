@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     font-family: "Inter", sans-serif !important;
 }
 .navbar{
@@ -13,13 +14,10 @@ body{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 0 110px;
     z-index: 1000;
     box-shadow: 0 5px 10px rgba(82, 80, 80, 0.341); 
     background-color: white;
-    transition: padding 0.3s ease;
 }
-
 .navbar-toggle{
     line-height: 1;
     font-size: 24px;
@@ -38,11 +36,16 @@ body{
 .navbar-toggle span{
     display: block;
     width: 26px;
-    height: 2px;
+    height: 3px;
     background-color: #333;
     border-radius: 2px;
     margin-bottom: 5px;
     transition: all 0.4s ease;
+    transform-origin: center;
+}
+.container{
+    width: 100%;
+    max-width: 1240px;
 }
 .menu-overlay {
     position: fixed;
@@ -182,7 +185,7 @@ img{
     right: 0;
     width: 100%;
     height: 100%;
-    padding: 30px 110px 40px 110px; 
+    padding: 30px calc((100vw - 1200px) / 2 + 20px) 40px;
     box-sizing: border-box;
     background-color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
@@ -274,7 +277,7 @@ img{
 .banner-content {
     position: absolute;
     top: 8%;
-    left: 110px;
+    left: 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -368,12 +371,12 @@ img{
     position: relative;
 }
 .box .box1 img{
-    width: 400px;
-    height: 390px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 400 / 390;
 }
 .slider-box .box1 img{
-    /* width: 400px;
-    height: 400px; */
     transition: transform 0.5s ease;
     object-fit: cover;
 }
@@ -387,7 +390,6 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 400px; */
     padding: 10px 5px;
 }
 .row1 a{
@@ -408,7 +410,7 @@ img{
     margin-top: 50px;
 }
 .content{
-    padding: 60px 110px;
+    padding: 60px 0;
 }
 .trademark{
     display: flex;
@@ -491,22 +493,20 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    padding: 100px 110px; 
+    padding: 100px 0; 
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.279);
 }
 .connect img{
-    width: 120%;
-    height: 100%;
+    width: 100%;
+    height: 710px;
     object-fit: cover; 
     display: block;
-    object-position: left center;
-    transform: translateX(-200px);
+    object-position: center;
 }
-.connect-text, .project-text{
+.connect-text, .project-text, .overview-text{
     position: absolute;
     top: 120px;
-    left: 110px;
 }
 .connect-text{
     width: 40%;
@@ -524,7 +524,7 @@ img{
 }
 .highlight, .sol, .project{
     position: relative;
-    margin: 60px 110px;
+    margin: 80px 0;
 }
 .sol .box1:hover svg{
     transform: translateX(0px);
@@ -533,7 +533,7 @@ img{
     width: 100%;
 }
 .slider-box .box1, .slider-box1 .box1, .box .box1{
-    padding: 0 15px;
+    padding-right: 24px;
     overflow: hidden !important;
 }
 .slider-box .box1 img, .slider-box1 .box1 img{
@@ -573,10 +573,10 @@ img{
     transform: translateX(20%);
 }
 .pre-arrow{
-    left: 15px;
+    left: 10%;
 }
 .next-arrow {
-    right: 25px;
+    right: 11%;
 }
 .overview .bg{
     width: 100%;
@@ -584,11 +584,6 @@ img{
     object-fit: cover; 
     display: block;
     opacity: 0.6;
-}
-.overview-text{
-    position: absolute;
-    top: 100px;
-    left: 110px;
 }
 .overview-text h2{
     color: white;
@@ -620,7 +615,7 @@ img{
 }
 .products{
     position: relative;
-    margin: 50px 110px;
+    margin: 50px 0;
 }
 .products h2{
     font-size: 40px;
@@ -693,7 +688,7 @@ img{
     object-fit: cover;
 }
 .footer{
-    margin: 50px 110px;
+    margin: 50px 0;
 }
 .footer p{
     color: #555;
@@ -793,18 +788,18 @@ img{
         fill: #3cb95f;
     }
 }
-@media(max-width: 1200px){
+@media(max-width: 1240px){
     .navbar img{
         display: none;
+    }
+    .container{
+        max-width: 960px;
     }
     .box .box1 img {
         width: 100%;
         max-width: 290px;
         height: auto;
         aspect-ratio: 290 / 280;
-    }
-    .overview{
-        height: 1050px; 
     }
     .logo{
         top: 300px;
@@ -823,10 +818,10 @@ img{
     .info{
         padding: 30px 20px 30px 0;
     }
-    .connect img{
+    /* .connect img{
         width: 140%;
         transform: translateX(-500px);
-    }
+    } */
     .row1 a{
         font-size: 24px;
     }
@@ -834,42 +829,20 @@ img{
         width: 930px;
     }
 } 
-@media(max-width: 992px){
+@media(max-width: 1200px){
+
+}
+@media(max-width: 991px){
     .navbar{
-        display: flex !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0; 
-        width: 100%;
-        height: 60px; 
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px !important; 
-        box-shadow: 0 5px 10px rgba(82, 80, 80, 0.341); 
-        background-color: white;
-        z-index: 1000;
+        padding: 0 20px !important;
     }
     .navbar-toggle{ 
         display: flex; 
-        position: fixed;
         right: 20px;
         top: 17px;
-        z-index: 10000;
-        width: 26px;
-        height: 26px;
         flex-direction: column;
         justify-content: center;
         gap: 6px;
-    }
-    .navbar-toggle span{
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-        transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
-        transform-origin: center;
     }
     .navbar-toggle.open{
         top: 30px; 
@@ -1089,7 +1062,7 @@ img{
         left: 20px;
     }
     .content{
-        padding: 60px 20px;
+        padding: 60px 0;
     }
     .overview{
         padding: 100px 20px; 
@@ -1101,7 +1074,7 @@ img{
         margin: 50px 20px;
     }
     .highlight, .sol, .project{
-        margin: 60px 20px;
+        margin: 80px 0;
     }
     .box-row1 img{
         width: 450px;
@@ -1113,16 +1086,15 @@ img{
     .box-row1 p{
         font-size: 18px;
     }
-    .connect img{
+    /* .connect img{
         width: 200%;
         transform: translateX(-900px);
-    }
+    } */
     .box .box1 img{
-        width: 295px !important; 
-        height: 283px !important;
-    }
-    .overview{
-        height: 700px; 
+        width: 100%;
+        max-width: 295px;
+        height: auto;
+        aspect-ratio: 295 / 283;
     }
     .logo{
         top: 280px;
@@ -1177,10 +1149,10 @@ img{
         height: auto; 
         aspect-ratio: 710 / 520;
     }
-    .connect img{
+    /* .connect img{
         width: 250%;
         transform: translateX(-1000px);
-    }
+    } */
     .project a{
         font-size: 18px;
     }
@@ -1256,10 +1228,10 @@ img{
         max-width: 276px;
         height: auto;
     }
-    .connect img{
+    /* .connect img{
         width: 300%;
         transform: translateX(-800px);
-    }
+    } */
     .logo{
         flex-direction: column;
     }
@@ -1272,9 +1244,6 @@ img{
     }
     #prd-it-3{
         display: none;
-    }
-    .overview{
-        height: 1050px; 
     }
     .inf2{
         flex-direction: column;
