@@ -31,7 +31,7 @@ body{
     position: fixed;
     right: 25px;
     top: 20px;
-    z-index: 1100;
+    z-index: 10000;
 }
 .navbar-toggle span{
     display: block;
@@ -44,7 +44,9 @@ body{
     transform-origin: center;
 }
 .container{
+    position: relative;
     width: 100%;
+    height: 100%;
     max-width: 1240px;
 }
 .menu-overlay {
@@ -474,14 +476,9 @@ img{
     color: #001C4E;
     text-decoration: none;
 }
-.connect{
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
 .overview {
     width: 100%;
-    height: 950px;
+    height: 1030px;
     position: relative;
     overflow: hidden;
     background-image: 
@@ -490,26 +487,38 @@ img{
     background-size: 100% auto;
     background-position: top center;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    padding: 100px 0; 
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.279);
 }
+.overview .container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.connect{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 710px;
+}
 .connect img{
     width: 100%;
-    height: 710px;
+    height: 100%;
     object-fit: cover; 
-    display: block;
     object-position: center;
-}
-.connect-text, .project-text, .overview-text{
     position: absolute;
-    top: 120px;
+    size: 100%;
+    z-index: 1;
+}
+.connect .container{
+    position: relative;
+    z-index: 2;
 }
 .connect-text{
-    width: 40%;
+    width: 50%;
+    transform: translateY(25%);
 }
 .connect-text h2{
     font-size: 2rem;
@@ -595,13 +604,13 @@ img{
 .logo{
     display: flex;
     flex-direction: row;
-    position: absolute;
-    top: 300px;
-    left: 450px;
+    top: 50%;
+    left: 50%;
 }
 .logo img{
     width: 250px;
     height: 250px;
+    padding: 10px;
 }
 .project img{
     width: 250px;
@@ -768,7 +777,7 @@ img{
     width: 1160px;
     overflow: hidden;
 }
-@media(min-width: 993px){
+@media(min-width: 1200px){
     .item:hover, .itemS:hover, .item1:hover, .item2:hover, .box1:hover a, .box-row1:hover a, .row1:hover a{
         color: #209B24;
     }
@@ -784,26 +793,17 @@ img{
         opacity: 1;
         visibility: visible;
     }
-    .cart:hover{
+    .cart:hover svg{
         fill: #3cb95f;
     }
 }
-@media(max-width: 1240px){
+@media(max-width: 1280px){
     .navbar img{
         display: none;
     }
     .container{
-        max-width: 960px;
-    }
-    .box .box1 img {
         width: 100%;
-        max-width: 290px;
-        height: auto;
-        aspect-ratio: 290 / 280;
-    }
-    .logo{
-        top: 300px;
-        left: 300px;
+        max-width: 960px;
     }
     .right-sub{
         margin-left: 180px;
@@ -818,10 +818,6 @@ img{
     .info{
         padding: 30px 20px 30px 0;
     }
-    /* .connect img{
-        width: 140%;
-        transform: translateX(-500px);
-    } */
     .row1 a{
         font-size: 24px;
     }
@@ -830,9 +826,13 @@ img{
     }
 } 
 @media(max-width: 1200px){
-
-}
-@media(max-width: 991px){
+    .navbar img{
+        display: block;
+    }
+    .navbar img{
+        width: 126px;
+        height: 40px;
+    }
     .navbar{
         padding: 0 20px !important;
     }
@@ -1038,12 +1038,21 @@ img{
     .cart svg{
         fill: inherit;
     }
-    .navbar img, .navbar-toggle{
-        display: block;
+    .overview{
+        height: 664px;
     }
+    .box3 .product-item img{
+        width: 260px;
+    }
+}
+@media(max-width: 992px){
     .navbar img{
         width: 126px;
         height: 40px;
+    }
+    .container{
+        width: 100%;
+        max-width: 690px;
     }
     .item, .itemS, .search, .cart{
         display: none;
@@ -1058,14 +1067,13 @@ img{
     .banner-content h2{
         text-align: left;
     }
-    .banner-content, .connect-text, .project-text, .overview-text{
-        left: 20px;
+    .connect-text{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
-    .content{
-        padding: 60px 0;
-    }
-    .overview{
-        padding: 100px 20px; 
+    .trademark, .box-row{
+        flex-direction: column;
     }
     .footer{
         margin: 50px 20px;
@@ -1077,8 +1085,10 @@ img{
         margin: 80px 0;
     }
     .box-row1 img{
-        width: 450px;
-        height: 350px;
+        width: 100%;
+        max-width: 690px;
+        height: auto;
+        aspect-ratio: 690 / 540;
     }
     .box-row1 a{
         font-size: 26px;
@@ -1086,23 +1096,11 @@ img{
     .box-row1 p{
         font-size: 18px;
     }
-    /* .connect img{
-        width: 200%;
-        transform: translateX(-900px);
-    } */
     .box .box1 img{
         width: 100%;
         max-width: 295px;
         height: auto;
         aspect-ratio: 295 / 283;
-    }
-    .logo{
-        top: 280px;
-        left: 280px;
-        margin-bottom: 50px;
-    }
-    .right-sub{
-        margin-left: 150px;
     }
     .trm-left h3{
         font-size: calc(1.3rem + .6vw);
@@ -1117,10 +1115,10 @@ img{
         font-size: 18px;
     } 
     .box3 .product-item img{
-        width: 260px;
+        width: 180px;
     }
     .box3 .product-item{
-        padding: 0;
+        padding: 10px;
     }
     .info p, .info b{
         margin-bottom: 7px;
@@ -1128,17 +1126,40 @@ img{
     .box3-1{
         width: 850px;
     }
+    .box2{
+        flex-direction: column;
+    }
+    #prd-it-4{
+        display: none;
+    }
+    .inf{
+        flex-wrap: wrap;
+    }
+    .inf1{
+        width: 100%;
+    }
+    .right-sub{
+        margin-left: 20px;
+    }
 }
 @media(max-width: 768px){
+    .container{
+        max-width: 540px;
+    }
     .banner-img img {
         transform: scale(1.9) translateX(200px);
     }
     .banner-content{
         transform: translateY(-30px);
     }
+    .box{
+        flex-direction: column;
+    }
     .box .box1 img{
-        width: 210px !important;
-        height: 200px !important; 
+        width: 100%;
+        max-width: 540px;
+        height: auto;
+        aspect-ratio: 540 / 490;
     }
     .trademark, .box-row{
         flex-direction: column;
@@ -1149,91 +1170,20 @@ img{
         height: auto; 
         aspect-ratio: 710 / 520;
     }
-    /* .connect img{
-        width: 250%;
-        transform: translateX(-1000px);
-    } */
     .project a{
         font-size: 18px;
-    }
-    .box2{
-        flex-direction: column;
-    }
-    #prd-it-4{
-        display: none;
-    }
-    .box3 .product-item img{
-        width: 180px;
-    }
-    .logo{
-        top: 350px;
-        left: 160px;
-        margin-bottom: 50px;
     }
     .box3 .product-item{
         padding: 20px;
     }
-    .connect-text{
-        width: 80%;
-    }
-    .inf{
-        flex-wrap: wrap;
-    }
-    .inf1{
-        width: 100%;
-    }
-    .sub{
-        flex-wrap: wrap;
-    }
-    .sub img{
-        margin-right: 300px;
-    }
-    .left-sub{
-        margin-left: 10px;
-    }
-    .right-sub{
-        margin-left: 20px;
-    }
     .box3-1{
         width: 690px;
     }
-}
-@media(max-width: 576px){
-    .banner-content {
-        position: absolute;
-        top: 40px;
-        left: 10px;
+    .overview{
+        height: 950px;
     }
-    .banner-img img{
-        transform: translateX(0);
-    }
-    .box .box1 img{
-        width: 100% !important;
-        max-width: 510px !important; 
-        height: auto !important; 
-        aspect-ratio: 510 / 490;
-    }
-    .box{
-        display: flex;
-        flex-direction: column; 
-    }
-    .trademark{
-        width: 100%;
-    }
-    .text-right{
-        text-align: center;
-    }
-    .trm-right img{
-        width: 100%;
-        max-width: 276px;
-        height: auto;
-    }
-    /* .connect img{
-        width: 300%;
-        transform: translateX(-800px);
-    } */
-    .logo{
-        flex-direction: column;
+    #prd-it-3{
+        display: none;
     }
     .inf, .sub{
         display: flex;
@@ -1242,17 +1192,21 @@ img{
     .row-sub{
         margin-left: 0;
     }
-    #prd-it-3{
-        display: none;
-    }
     .inf2{
         flex-direction: column;
     }
     .right-sub{
         margin-left: 0;
     }
-    .box3-1{
-        width: 100%;
-        max-width: 430px;
+    .info{
+        padding: 10px 0;
+    }
+    .left-sub{
+        margin-left: 10px;
+    }
+}
+@media(max-width: 559px){
+    .logo{
+        flex-direction: column;
     }
 }
