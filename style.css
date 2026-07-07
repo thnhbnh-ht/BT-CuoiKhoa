@@ -491,11 +491,17 @@ img{
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.279);
 }
-.overview .container{
+.overview .overview-text{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    margin-top: 5%;
+}
+.overview .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 5%;
 }
 .connect{
