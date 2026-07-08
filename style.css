@@ -1215,8 +1215,55 @@ img{
         margin-left: 10px;
     }
 }
+@media(max-width: 576px){
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: none;
+    }
+    .why, .content, .trademark, .box-row {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .trademark, .box-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-row1, .trm-left, .trm-right {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%; 
+        margin: 0 auto 20px auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .box-row1 img, .trm-right img, .box1 img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto; 
+    }
+}
 @media(max-width: 559px){
     .logo{
         flex-direction: column;
+    }
+}
+@media(max-width: 550px){
+    .box-row1 a{
+        font-size: 26px;
+    }
+    .trm-left p, .box-row1 p{
+        font-size: 18px;
     }
 }
